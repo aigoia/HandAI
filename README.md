@@ -54,6 +54,7 @@ The project captures webcam input, detects 21 hand landmarks, and renders a palm
   
 ## Setup
 npm install
+
 npm run dev
 
 Open:
