@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hand Tracking Web Demo
+Real-time hand tracking application using Next.js, TypeScript, and MediaPipe Hands.
+The project captures webcam input, detects 21 hand landmarks, and renders a palm fill with a finger skeleton overlay.
 
-## Getting Started
+## Features
+* Webcam input
+* Real-time hand tracking
+* 21-point landmark detection
+* Palm fill rendering
+* Finger skeleton rendering
+* Mirrored video display
 
-First, run the development server:
+## Tech Stack
+* Next.js (App Router)
+* TypeScript
+* Tailwind CSS
+* MediaPipe Hands (CDN)
 
-```bash
+## Project Structure
+/app
+  page.tsx
+
+/components
+  WebcamCanvas.tsx
+
+/hooks
+  useHandTracking.ts
+
+/lib
+  mediapipe.ts
+
+## Pipeline
+1. Capture webcam stream
+2. Send frames to MediaPipe Hands
+3. Receive 21 hand landmarks
+4. Render:
+   * Palm polygon
+   * Finger skeleton
+   * Fingertip points
+
+## Performance Settings
+* Resolution: 320x240
+* Model complexity: 0
+* Frame skipping enabled
+* Reduced rendering (fingertips only)
+
+## Hand Landmarks
+* 0: wrist
+* 4: thumb tip
+* 8: index finger tip
+* 12: middle finger tip
+* 16: ring finger tip
+* 20: pinky tip
+  
+## Setup
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open:
+http://localhost
