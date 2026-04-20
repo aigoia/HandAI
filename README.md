@@ -1,4 +1,4 @@
-# Hand Tracking Web Demo
+# Hand Tracking Web
 Real-time hand tracking application using Next.js, TypeScript, and MediaPipe Hands.
 The project captures webcam input, detects 21 hand landmarks, and renders a palm fill with a finger skeleton overlay.
 
